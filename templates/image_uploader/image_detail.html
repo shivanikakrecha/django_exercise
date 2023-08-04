@@ -1,0 +1,12 @@
+{% extends 'base.html' %}  
+
+{% block content %}
+    <h1>Image Detail</h1>
+    <img src="{{image.image.url}}" alt="Uploaded Image" width="400">
+    <p>Uploaded Date: {{ image.upload_date.date }}</p>
+    <p>Uploader IP: {{ image.uploader_ip }}</p>
+
+    {% if image.uploader_ip == request.META.REMOTE_ADDR %}
+        <button><a href="{% url 'image_uploader:image_delete' image.unique_identifier %}">Delete Image</a></button>
+    {% endif %}
+{% endblock %}

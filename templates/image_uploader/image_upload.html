@@ -1,0 +1,12 @@
+{% extends 'base.html' %}  
+
+{% block content %}
+    <h2>Please select the image from your disk!</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="file-input" class="custom-file-upload">
+            <input id="file-input" type="file" name="image" accept="image/*">
+        </label>
+        <button type="submit">Upload Image</button>
+    </form>
+{% endblock %}
