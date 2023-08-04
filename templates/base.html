@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% block title %}
+      <title>Upload Image</title>
+    {% endblock %}
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}">
+  </head>
+  <body>
+      <div class="container">
+        <form method="post" enctype="multipart/form-data" action={% url 'image_uploader:logout' %}>
+          {% csrf_token %}
+          <button type="submit">logout</button>
+        </form>
+        {% block content %}
+            <!-- default content text (typically empty) -->
+        {% endblock %} 
+      </div>
+  </body>
+</html>
