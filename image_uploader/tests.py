@@ -17,3 +17,5 @@ class UploadImageTestCase(TestCase):
             unique_identifier=uuid.uuid4,
         )
         return super().setUp()
+    
+    
